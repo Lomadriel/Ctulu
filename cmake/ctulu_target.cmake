@@ -42,7 +42,7 @@ function(ctulu_create_target target_name group_name)
 
         if(ctulu_create_target_TEST)
             set(ctulu_target_list_${target_name}_TYPE "TEST" PARENT_SCOPE)
-            add_test(NAME ${target_name} COMMAND ${name})
+            add_test(NAME ${target_name} COMMAND ${target_name})
         endif()
     elseif(ctulu_create_target_INTERFACE)
         set(ctulu_target_list_${target_name}_TYPE "INTERFACE" PARENT_SCOPE)
