@@ -158,3 +158,13 @@ function(ctulu_target_include_directories_impl target_name)
     endif()
 endfunction()
 
+function(ctulu_remove_system_impl input)
+    if (${input})
+        list(GET ${input} 0 first_element)
+        if (${first_element} STREQUAL "SYSTEM")
+            list(REMOVE_AT ${input} 0)
+        endif()
+    endif()
+
+    set(${input} ${${input}} PARENT_SCOPE)
+endfunction()
